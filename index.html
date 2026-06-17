@@ -3,119 +3,101 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aurelia Jewelry</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<title>Aurelia Jewelry Shop</title>
 
 <style>
-    *{
-        margin:0;
-        padding:0;
-        box-sizing:border-box;
-    }
-
     body{
-        font-family: 'Montserrat', sans-serif;
+        margin:0;
+        font-family:Arial, sans-serif;
         background:#0f0f0f;
         color:#fff;
     }
 
     header{
-        height:100vh;
-        background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-        url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1600&q=80');
-        background-size:cover;
-        background-position:center;
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
         text-align:center;
-        padding:20px;
+        padding:80px 20px;
+        background:linear-gradient(135deg,#d4af37,#111);
     }
 
     header h1{
-        font-family:'Playfair Display', serif;
-        font-size:60px;
-        letter-spacing:2px;
-        color:#d4af37;
+        font-size:50px;
+        margin-bottom:10px;
+        color:#fff;
     }
 
     header p{
-        margin-top:20px;
-        font-size:20px;
-        max-width:600px;
+        font-size:18px;
         color:#ddd;
     }
 
-    .btn{
-        margin-top:30px;
-        padding:15px 35px;
-        border:1px solid #d4af37;
-        color:#d4af37;
-        text-decoration:none;
-        transition:0.3s;
-        border-radius:30px;
-    }
-
-    .btn:hover{
-        background:#d4af37;
-        color:#000;
-    }
-
     section{
-        padding:80px 10%;
-        background:#111;
+        padding:60px 10%;
     }
 
     h2{
-        font-family:'Playfair Display', serif;
-        font-size:40px;
         text-align:center;
-        margin-bottom:50px;
+        margin-bottom:40px;
         color:#d4af37;
+        font-size:32px;
     }
 
     .grid{
         display:grid;
         grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
-        gap:30px;
+        gap:25px;
     }
 
-    .item{
+    .card{
         background:#1a1a1a;
         border-radius:15px;
         overflow:hidden;
         transition:0.3s;
     }
 
-    .item:hover{
-        transform:translateY(-10px);
+    .card:hover{
+        transform:translateY(-8px);
     }
 
-    .item img{
+    .card img{
         width:100%;
-        height:250px;
+        height:220px;
         object-fit:cover;
     }
 
-    .item h3{
-        padding:15px;
+    .card h3{
+        margin:15px;
         color:#fff;
     }
 
-    .item p{
-        padding:0 15px 20px;
+    .card p{
+        margin:0 15px;
         color:#aaa;
         font-size:14px;
     }
 
-    .about{
-        max-width:800px;
-        margin:auto;
+    .price{
+        margin:10px 15px;
+        color:#d4af37;
+        font-weight:bold;
+        font-size:18px;
+    }
+
+    .buy-btn{
+        display:block;
+        margin:15px;
+        padding:12px;
         text-align:center;
-        color:#ccc;
-        line-height:1.8;
+        background:#d4af37;
+        color:#000;
+        text-decoration:none;
+        border-radius:25px;
+        font-weight:bold;
+        transition:0.3s;
+    }
+
+    .buy-btn:hover{
+        background:#fff;
+        color:#000;
     }
 
     footer{
@@ -125,7 +107,6 @@
         color:#777;
         font-size:14px;
     }
-
 </style>
 </head>
 
@@ -133,32 +114,29 @@
 
 <header>
     <h1>Aurelia Jewelry</h1>
-    <p>Luxuriöser Schmuck, der Eleganz, Stil und zeitlose Schönheit vereint.</p>
-    <a href="#kollektion" class="btn">Kollektion entdecken</a>
+    <p>Exklusiver Schmuck in Gold & Silber – Halsketten, Armbänder & Ohrringe</p>
 </header>
 
-<section id="kollektion">
+<section>
 
-<h2>Unsere Kollektion</h2>
+<h2>Halsketten</h2>
 
 <div class="grid">
 
-    <div class="item">
-        <img src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=800&q=80">
-        <h3>Gold Ringe</h3>
-        <p>Klassische Eleganz in reinem Gold für besondere Momente.</p>
-    </div>
-
-    <div class="item">
+    <div class="card">
         <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=80">
-        <h3>Halsketten</h3>
-        <p>Feine Designs, die jedes Outfit perfekt ergänzen.</p>
+        <h3>Gold Halskette</h3>
+        <p>Elegante 18K Goldkette für jeden Anlass.</p>
+        <div class="price">€129</div>
+        <a href="#" class="buy-btn">Jetzt kaufen</a>
     </div>
 
-    <div class="item">
-        <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=800&q=80">
-        <h3>Armbänder</h3>
-        <p>Minimalistisch, elegant und zeitlos schön.</p>
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1611599537845-1c7aca0091c0?auto=format&fit=crop&w=800&q=80">
+        <h3>Silber Halskette</h3>
+        <p>Minimalistische Silberkette mit modernem Design.</p>
+        <div class="price">€89</div>
+        <a href="#" class="buy-btn">Jetzt kaufen</a>
     </div>
 
 </div>
@@ -167,14 +145,52 @@
 
 <section>
 
-<h2>Über uns</h2>
+<h2>Armbänder</h2>
 
-<div class="about">
-    <p>
-        Aurelia Jewelry steht für hochwertige Handwerkskunst und modernes Design.
-        Jeder Schmuck wird mit Liebe zum Detail gefertigt, um besondere Momente
-        noch unvergesslicher zu machen.
-    </p>
+<div class="grid">
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=800&q=80">
+        <h3>Gold Armband</h3>
+        <p>Luxuriöses Armband aus feinem Gold.</p>
+        <div class="price">€99</div>
+        <a href="#" class="buy-btn">Jetzt kaufen</a>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=800&q=80">
+        <h3>Silber Armband</h3>
+        <p>Stilvolles Silberarmband für jeden Tag.</p>
+        <div class="price">€79</div>
+        <a href="#" class="buy-btn">Jetzt kaufen</a>
+    </div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Ohrringe</h2>
+
+<div class="grid">
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a2fdb?auto=format&fit=crop&w=800&q=80">
+        <h3>Gold Ohrringe</h3>
+        <p>Elegante Ohrstecker in hochwertigem Gold.</p>
+        <div class="price">€69</div>
+        <a href="#" class="buy-btn">Jetzt kaufen</a>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a2fdb?auto=format&fit=crop&w=800&q=80">
+        <h3>Silber Ohrringe</h3>
+        <p>Schlichte und elegante Silberohrringe.</p>
+        <div class="price">€59</div>
+        <a href="#" class="buy-btn">Jetzt kaufen</a>
+    </div>
+
 </div>
 
 </section>
