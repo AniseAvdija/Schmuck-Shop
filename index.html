@@ -1,229 +1,485 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aurelia Jewelry Shop</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ Luxus Schmuck | Elegante Schmuckkollektion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
-    body{
-        margin:0;
-        font-family:Arial, sans-serif;
-        background:#0f0f0f;
-        color:#fff;
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #fafafa;
+        }
 
-    header{
-        text-align:center;
-        padding:90px 20px;
-        background:linear-gradient(135deg,#d4af37,#111);
-    }
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
 
-    header h1{
-        font-size:55px;
-        margin-bottom:10px;
-    }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
 
-    header p{
-        max-width:700px;
-        margin:auto;
-        font-size:18px;
-        color:#eee;
-        line-height:1.6;
-    }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
 
-    section{
-        padding:60px 10%;
-    }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
 
-    h2{
-        text-align:center;
-        color:#d4af37;
-        font-size:34px;
-        margin-bottom:40px;
-    }
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
 
-    .grid{
-        display:grid;
-        grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
-        gap:25px;
-    }
+        nav a:hover {
+            color: #d4af37;
+        }
 
-    .card{
-        background:#1a1a1a;
-        border-radius:15px;
-        overflow:hidden;
-        transition:0.3s;
-        box-shadow:0 0 20px rgba(0,0,0,0.4);
-    }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #3d3d3d 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(192, 192, 192, 0.1) 0%, transparent 50%);
+        }
 
-    .card:hover{
-        transform:translateY(-8px);
-    }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
 
-    .card img{
-        width:100%;
-        height:220px;
-        object-fit:cover;
-    }
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-    .card h3{
-        margin:15px;
-    }
+        .cta-button {
+            background: linear-gradient(135deg, #d4af37 0%, #f0c854 100%);
+            color: #1a1a1a;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            margin: 0.5rem;
+        }
 
-    .card p{
-        margin:0 15px;
-        color:#aaa;
-        font-size:14px;
-        line-height:1.4;
-    }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+        }
 
-    .price{
-        margin:10px 15px;
-        color:#d4af37;
-        font-weight:bold;
-        font-size:18px;
-    }
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
 
-    .buy{
-        display:block;
-        margin:15px;
-        padding:12px;
-        text-align:center;
-        background:#d4af37;
-        color:#000;
-        text-decoration:none;
-        border-radius:25px;
-        font-weight:bold;
-        transition:0.3s;
-    }
+        /* Section Styling */
+        section {
+            padding: 4rem 0;
+        }
 
-    .buy:hover{
-        background:#fff;
-    }
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #1a1a1a;
+            position: relative;
+            padding-bottom: 1rem;
+        }
 
-    footer{
-        text-align:center;
-        padding:30px;
-        background:#000;
-        color:#777;
-    }
-</style>
+        section h2::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #d4af37, #c0c0c0);
+            margin: 1rem auto 0;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+        }
+
+        .product-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+
+        .product-content p {
+            color: #666;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+            font-size: 0.95rem;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #d4af37;
+            margin-bottom: 1rem;
+        }
+
+        .buy-button {
+            background: linear-gradient(135deg, #1a1a1a 0%, #3d3d3d 100%);
+            color: white;
+            border: 2px solid #d4af37;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .buy-button:hover {
+            background: linear-gradient(135deg, #d4af37 0%, #f0c854 100%);
+            color: #1a1a1a;
+            border-color: #1a1a1a;
+        }
+
+        /* Category Sections */
+        .silver-section {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+        }
+
+        .gold-section {
+            background: linear-gradient(135deg, #fffaf0 0%, #fff5e6 100%);
+        }
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .feature-box {
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+
+        .feature-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #d4af37;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <div class="logo">✨ LUXE JEWELS</div>
+            <ul>
+                <li><a href="#silber">Silber</a></li>
+                <li><a href="#gold">Gold</a></li>
+                <li><a href="#ketten">Ketten</a></li>
+                <li><a href="#armbaender">Armbänder</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<header>
-    <h1>Aurelia Jewelry</h1>
-    <p>
-        Entdecke exklusiven Gold- und Silberschmuck in zeitlosen Designs.
-        Unsere Kollektion vereint Eleganz, Qualität und modernen Stil –
-        perfekt für jeden Anlass oder als besonderes Geschenk.
-    </p>
-</header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Timeless Elegance</h1>
+        <p>Entdecke unsere exklusive Kollektion aus hochwertigem Silber- und Goldschmuck. Jedes Stück ist ein Meisterwerk der Handwerkskunst.</p>
+        <button class="cta-button">Jetzt Einkaufen</button>
+    </section>
 
-<!-- HÄNGEKETTEN -->
-<section>
-<h2>Halsketten</h2>
+    <!-- Silver Section -->
+    <section class="silver-section" id="silber">
+        <div class="container">
+            <h2>✦ Silberschmuck</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&h=500&fit=crop" alt="Silberkette" class="product-image">
+                    <div class="product-content">
+                        <h3>Elegante Silberkette</h3>
+                        <p>Eine klassische Silberkette aus 925er Sterling-Silber mit feiner Verarbeitung. Perfekt für den alltäglichen Look.</p>
+                        <div class="price">€ 89,99</div>
+                        <button class="buy-button">In den Warenkorb</button>
+                    </div>
+                </div>
 
-<div class="grid">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=500&h=500&fit=crop" alt="Silberarmband" class="product-image">
+                    <div class="product-content">
+                        <h3>Modernes Silberarmband</h3>
+                        <p>Schlichtes Design mit großer Wirkung. Dieses Armband aus reinem Silber ist zeitlos und elegant.</p>
+                        <div class="price">€ 79,99</div>
+                        <button class="buy-button">In den Warenkorb</button>
+                    </div>
+                </div>
 
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=80">
-        <h3>Gold Halskette Classic</h3>
-        <p>Elegante 18K Goldkette für einen luxuriösen Look.</p>
-        <div class="price">€129</div>
-        <a href="#" class="buy">Jetzt kaufen</a>
-    </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1515536888214-823571c7d64d?w=500&h=500&fit=crop" alt="Silberschmuckset" class="product-image">
+                    <div class="product-content">
+                        <h3>Silberschmuckset</h3>
+                        <p>Kombiniere mehrere Teile für deinen perfekten Look. Set bestehend aus Halskette und Armband.</p>
+                        <div class="price">€ 149,99</div>
+                        <button class="buy-button">In den Warenkorb</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1611599537845-1c7aca0091c0?auto=format&fit=crop&w=800&q=80">
-        <h3>Silber Halskette Minimal</h3>
-        <p>Feine Silberkette für einen modernen, schlichten Stil.</p>
-        <div class="price">€89</div>
-        <a href="#" class="buy">Jetzt kaufen</a>
-    </div>
+    <!-- Gold Section -->
+    <section class="gold-section" id="gold">
+        <div class="container">
+            <h2>♦ Goldschmuck</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1515377905703-c28999319b12?w=500&h=500&fit=crop" alt="Goldkette" class="product-image">
+                    <div class="product-content">
+                        <h3>Luxus Goldkette</h3>
+                        <p>Exquisites Goldstück aus 18 Karat Gold. Ein Statement-Piece für besondere Anlässe und jeden Tag.</p>
+                        <div class="price">€ 299,99</div>
+                        <button class="buy-button">In den Warenkorb</button>
+                    </div>
+                </div>
 
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1627293509201-3c7b7a2a2a50?auto=format&fit=crop&w=800&q=80">
-        <h3>Gold Anhänger Herz</h3>
-        <p>Romantischer Herzanhänger in glänzendem Gold.</p>
-        <div class="price">€149</div>
-        <a href="#" class="buy">Jetzt kaufen</a>
-    </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=500&h=500&fit=crop" alt="Goldarmband" class="product-image">
+                    <div class="product-content">
+                        <h3>Premium Goldarmband</h3>
+                        <p>Ein wunderbar glänzendes Goldarmband mit raffinierter Struktur. Der perfekte Begleiter für jede Gelegenheit.</p>
+                        <div class="price">€ 249,99</div>
+                        <button class="buy-button">In den Warenkorb</button>
+                    </div>
+                </div>
 
-</div>
-</section>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1599643478289-e4be5d84d70d?w=500&h=500&fit=crop" alt="Goldset" class="product-image">
+                    <div class="product-content">
+                        <h3>Goldschmuckset Deluxe</h3>
+                        <p>Komplettes Luxus-Set mit Halskette, Armband und Ohrhängern aus hochwertigem Feingold.</p>
+                        <div class="price">€ 499,99</div>
+                        <button class="buy-button">In den Warenkorb</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- ARMBÄNDER -->
-<section>
-<h2>Armbänder</h2>
+    <!-- Chains Section -->
+    <section id="ketten">
+        <div class="container">
+            <h2>⛓️ Ketten & Halsketten</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&h=500&fit=crop" alt="Feinkette" class="product-image">
+                    <div class="product-content">
+                        <h3>Zarte Feinkette</h3>
+                        <p>Ultrafeines Design für minimalistische Liebhaber. Subtil und doch wirkungsvoll - eine echte Schönheit.</p>
+                        <div class="price">€ 69,99</div>
+                        <button class="buy-button">In den Warenkorb</button>
+                    </div>
+                </div>
 
-<div class="grid">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&h=500&fit=crop" alt="Perlenkette" class="product-image">
+                    <div class="product-content">
+                        <h3>Elegante Perlenkette</h3>
+                        <p>Klassische Perlenkette mit Silberverschluss. Zeitlos elegant und perfekt zu jeder Gelegenheit.</p>
+                        <div class="price">€ 139,99</div>
+                        <button class="buy-button">In den Warenkorb</button>
+                    </div>
+                </div>
 
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=800&q=80">
-        <h3>Gold Armband Premium</h3>
-        <p>Luxuriöses Design für besondere Anlässe.</p>
-        <div class="price">€119</div>
-        <a href="#" class="buy">Jetzt kaufen</a>
-    </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=500&h=500&fit=crop" alt="Massivkette" class="product-image">
+                    <div class="product-content">
+                        <h3>Massive Gliederkette</h3>
+                        <p>Statement-Kette mit markanten Gliedern. Robust und zeitlos schön - ein echter Klassiker.</p>
+                        <div class="price">€ 179,99</div>
+                        <button class="buy-button">In den Warenkorb</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=800&q=80">
-        <h3>Silber Armband Elegant</h3>
-        <p>Zeitloses Armband für jeden Tag.</p>
-        <div class="price">€79</div>
-        <a href="#" class="buy">Jetzt kaufen</a>
-    </div>
+    <!-- Bracelets Section -->
+    <section class="silver-section" id="armbaender">
+        <div class="container">
+            <h2>◆ Armbänder</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=500&h=500&fit=crop" alt="Tennisarmband" class="product-image">
+                    <div class="product-content">
+                        <h3>Glamouröses Tennisarmband</h3>
+                        <p>Mit glänzenden Kristallen besetztes Armband. Das perfekte Accessoire für elegante Momente.</p>
+                        <div class="price">€ 119,99</div>
+                        <button class="buy-button">In den Warenkorb</button>
+                    </div>
+                </div>
 
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a2fdb?auto=format&fit=crop&w=800&q=80">
-        <h3>Gold Kettenarmband</h3>
-        <p>Starkes, elegantes Kettendesign in Gold.</p>
-        <div class="price">€139</div>
-        <a href="#" class="buy">Jetzt kaufen</a>
-    </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&h=500&fit=crop" alt="Charm Armband" class="product-image">
+                    <div class="product-content">
+                        <h3>Charm Armband Collection</h3>
+                        <p>Personalisiertes Armband mit wechselbaren Charms. Drücke deine Individualität aus.</p>
+                        <div class="price">€ 99,99</div>
+                        <button class="buy-button">In den Warenkorb</button>
+                    </div>
+                </div>
 
-</div>
-</section>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=500&h=500&fit=crop" alt="Minimalistisches Armband" class="product-image">
+                    <div class="product-content">
+                        <h3>Minimalistisches Armband</h3>
+                        <p>Feingliedriges Design in schlichter Eleganz. Passt zu jedem Style und Anlass.</p>
+                        <div class="price">€ 59,99</div>
+                        <button class="buy-button">In den Warenkorb</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- OHHRINGE -->
-<section>
-<h2>Ohrringe</h2>
+    <!-- Features Section -->
+    <section>
+        <div class="container">
+            <h2>Warum uns wählen?</h2>
+            <div class="features">
+                <div class="feature-box">
+                    <h3>✓ Premium Qualität</h3>
+                    <p>Alle unsere Produkte werden aus hochwertigen Materialien gefertigt und erfüllen höchste Standards.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>✓ Kostenloser Versand</h3>
+                    <p>Genießen Sie kostenlosen Versand für alle Bestellungen ab € 50. Schnell und sicher zu dir nach Hause.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>✓ Lebenslange Garantie</h3>
+                    <p>Wir stehen hinter unseren Produkten mit einer umfassenden Qualitätsgarantie.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="grid">
-
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a2fdb?auto=format&fit=crop&w=800&q=80">
-        <h3>Gold Ohrstecker</h3>
-        <p>Feine goldene Ohrstecker für elegante Looks.</p>
-        <div class="price">€69</div>
-        <a href="#" class="buy">Jetzt kaufen</a>
-    </div>
-
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=80">
-        <h3>Silber Ohrringe Modern</h3>
-        <p>Minimalistische Silberohrringe mit Stil.</p>
-        <div class="price">€59</div>
-        <a href="#" class="buy">Jetzt kaufen</a>
-    </div>
-
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a2fdb?auto=format&fit=crop&w=800&q=80">
-        <h3>Gold Creolen Luxus</h3>
-        <p>Klassische Creolen für einen edlen Auftritt.</p>
-        <div class="price">€99</div>
-        <a href="#" class="buy">Jetzt kaufen</a>
-    </div>
-
-</div>
-</section>
-
-<footer>
-    © 2026 Aurelia Jewelry | Gold & Silber Kollektion
-</footer>
-
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 LUXE JEWELS - Premium Schmuck Kollektion. Alle Rechte vorbehalten.</p>
+        <p>Kontakt: info@luxejewels.de | Telefon: +49 (0) 123 456789</p>
+    </footer>
 </body>
 </html>
