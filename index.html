@@ -1,206 +1,186 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eleganz Schmuck</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aurelia Jewelry</title>
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:Arial, Helvetica, sans-serif;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
-        body{
-            background:#faf8f5;
-            color:#333;
-        }
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
 
-        header{
-            background:linear-gradient(135deg,#c8a96a,#f5e6c5);
-            color:white;
-            text-align:center;
-            padding:80px 20px;
-        }
+    body{
+        font-family: 'Montserrat', sans-serif;
+        background:#0f0f0f;
+        color:#fff;
+    }
 
-        header h1{
-            font-size:55px;
-            margin-bottom:20px;
-        }
+    header{
+        height:100vh;
+        background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1600&q=80');
+        background-size:cover;
+        background-position:center;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+        padding:20px;
+    }
 
-        header p{
-            font-size:22px;
-            margin-bottom:30px;
-        }
+    header h1{
+        font-family:'Playfair Display', serif;
+        font-size:60px;
+        letter-spacing:2px;
+        color:#d4af37;
+    }
 
-        .btn{
-            display:inline-block;
-            background:white;
-            color:#b8860b;
-            padding:15px 35px;
-            text-decoration:none;
-            font-weight:bold;
-            border-radius:30px;
-            transition:.3s;
-        }
+    header p{
+        margin-top:20px;
+        font-size:20px;
+        max-width:600px;
+        color:#ddd;
+    }
 
-        .btn:hover{
-            background:#333;
-            color:white;
-        }
+    .btn{
+        margin-top:30px;
+        padding:15px 35px;
+        border:1px solid #d4af37;
+        color:#d4af37;
+        text-decoration:none;
+        transition:0.3s;
+        border-radius:30px;
+    }
 
-        section{
-            padding:70px 10%;
-        }
+    .btn:hover{
+        background:#d4af37;
+        color:#000;
+    }
 
-        h2{
-            text-align:center;
-            margin-bottom:40px;
-            color:#b8860b;
-            font-size:36px;
-        }
+    section{
+        padding:80px 10%;
+        background:#111;
+    }
 
-        .products{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-            gap:30px;
-        }
+    h2{
+        font-family:'Playfair Display', serif;
+        font-size:40px;
+        text-align:center;
+        margin-bottom:50px;
+        color:#d4af37;
+    }
 
-        .card{
-            background:white;
-            border-radius:15px;
-            overflow:hidden;
-            box-shadow:0 5px 15px rgba(0,0,0,.1);
-            transition:.3s;
-        }
+    .grid{
+        display:grid;
+        grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+        gap:30px;
+    }
 
-        .card:hover{
-            transform:translateY(-10px);
-        }
+    .item{
+        background:#1a1a1a;
+        border-radius:15px;
+        overflow:hidden;
+        transition:0.3s;
+    }
 
-        .card img{
-            width:100%;
-            height:250px;
-            object-fit:cover;
-        }
+    .item:hover{
+        transform:translateY(-10px);
+    }
 
-        .card h3{
-            padding:20px 20px 10px;
-        }
+    .item img{
+        width:100%;
+        height:250px;
+        object-fit:cover;
+    }
 
-        .card p{
-            padding:0 20px 20px;
-            color:#666;
-        }
+    .item h3{
+        padding:15px;
+        color:#fff;
+    }
 
-        .about{
-            text-align:center;
-            max-width:900px;
-            margin:auto;
-            font-size:18px;
-            line-height:1.8;
-        }
+    .item p{
+        padding:0 15px 20px;
+        color:#aaa;
+        font-size:14px;
+    }
 
-        footer{
-            background:#222;
-            color:white;
-            text-align:center;
-            padding:25px;
-        }
+    .about{
+        max-width:800px;
+        margin:auto;
+        text-align:center;
+        color:#ccc;
+        line-height:1.8;
+    }
 
-        @media(max-width:768px){
-            header h1{
-                font-size:40px;
-            }
+    footer{
+        text-align:center;
+        padding:30px;
+        background:#000;
+        color:#777;
+        font-size:14px;
+    }
 
-            header p{
-                font-size:18px;
-            }
-        }
-
-    </style>
+</style>
 </head>
+
 <body>
 
 <header>
-    <h1>Eleganz Schmuck</h1>
-    <p>Entdecke zeitlose Schönheit für jeden Anlass.</p>
-
-    <a href="#produkte" class="btn">Jetzt entdecken</a>
+    <h1>Aurelia Jewelry</h1>
+    <p>Luxuriöser Schmuck, der Eleganz, Stil und zeitlose Schönheit vereint.</p>
+    <a href="#kollektion" class="btn">Kollektion entdecken</a>
 </header>
 
-<section id="produkte">
+<section id="kollektion">
 
-    <h2>Unsere Kollektion</h2>
+<h2>Unsere Kollektion</h2>
 
-    <div class="products">
+<div class="grid">
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=800&q=80" alt="Goldring">
-
-            <h3>Goldringe</h3>
-
-            <p>Elegante Ringe aus hochwertigem Gold für besondere Momente.</p>
-
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a2fdb?auto=format&fit=crop&w=800&q=80" alt="Halskette">
-
-            <h3>Halsketten</h3>
-
-            <p>Edle Halsketten mit stilvollen Designs für jeden Geschmack.</p>
-
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80" alt="Armband">
-
-            <h3>Armbänder</h3>
-
-            <p>Luxuriöse Armbänder, die Eleganz und Stil vereinen.</p>
-
-        </div>
-
+    <div class="item">
+        <img src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=800&q=80">
+        <h3>Gold Ringe</h3>
+        <p>Klassische Eleganz in reinem Gold für besondere Momente.</p>
     </div>
+
+    <div class="item">
+        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=80">
+        <h3>Halsketten</h3>
+        <p>Feine Designs, die jedes Outfit perfekt ergänzen.</p>
+    </div>
+
+    <div class="item">
+        <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=800&q=80">
+        <h3>Armbänder</h3>
+        <p>Minimalistisch, elegant und zeitlos schön.</p>
+    </div>
+
+</div>
 
 </section>
 
 <section>
 
-    <h2>Warum wir?</h2>
+<h2>Über uns</h2>
 
-    <div class="about">
-
-        <p>
-            Unsere Schmuckstücke werden mit höchster Präzision gefertigt und
-            verbinden modernes Design mit traditioneller Handwerkskunst.
-            Ob Geschenk oder persönliches Highlight – bei uns findest du
-            Schmuck, der Erinnerungen schafft.
-        </p>
-
-    </div>
-
-</section>
-
-<section style="text-align:center;">
-
-    <h2>Jetzt deinen Lieblingsschmuck entdecken</h2>
-
-    <p style="margin-bottom:30px;font-size:18px;">
-        Exklusive Angebote und zeitlose Eleganz warten auf dich.
+<div class="about">
+    <p>
+        Aurelia Jewelry steht für hochwertige Handwerkskunst und modernes Design.
+        Jeder Schmuck wird mit Liebe zum Detail gefertigt, um besondere Momente
+        noch unvergesslicher zu machen.
     </p>
-
-    <a href="#" class="btn">Kollektion ansehen</a>
+</div>
 
 </section>
 
 <footer>
-
-    © 2026 Eleganz Schmuck | Alle Rechte vorbehalten.
-
+    © 2026 Aurelia Jewelry | Alle Rechte vorbehalten
 </footer>
 
 </body>
