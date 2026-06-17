@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxus Schmuck - Silber & Gold Kollektion</title>
+    <title>LuxeJewels - Premium Schmuck</title>
     <style>
         * {
             margin: 0;
@@ -15,21 +15,21 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f8f7f5;
+            background: #f8f7f4;
         }
 
         /* Header & Navigation */
         header {
             background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
             color: white;
-            padding: 20px 0;
+            padding: 1.5rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
         }
 
-        nav {
+        .header-content {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
@@ -39,25 +39,26 @@
         }
 
         .logo {
-            font-size: 28px;
+            font-size: 1.8rem;
             font-weight: bold;
-            background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #d4af37;
         }
 
         nav ul {
-            display: flex;
             list-style: none;
-            gap: 30px;
+            display: flex;
+            gap: 2rem;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
+            font-size: 0.95rem;
         }
 
         nav a:hover {
@@ -68,68 +69,97 @@
         .hero {
             background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
             color: white;
-            padding: 100px 20px;
+            padding: 5rem 20px;
             text-align: center;
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23d4af37" opacity="0.1"/></pattern></defs><rect width="1200" height="600" fill="url(%23pattern)"/></svg>');
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .hero .highlight {
-            color: #d4af37;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
         }
 
         .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            opacity: 0.9;
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #ddd;
         }
 
-        .hero-btn {
-            background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
-            color: #1a1a1a;
-            padding: 15px 40px;
-            border: none;
-            border-radius: 50px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .btn {
             display: inline-block;
+            padding: 0.9rem 2rem;
+            background: linear-gradient(135deg, #d4af37 0%, #b8960f 100%);
+            color: #1a1a1a;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .hero-btn:hover {
+        .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
         }
 
-        /* Main Container */
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #d4af37;
+            color: #d4af37;
+            margin-left: 1rem;
+        }
+
+        .btn-secondary:hover {
+            background: #d4af37;
+            color: #1a1a1a;
+        }
+
+        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* Category Section */
-        .category-section {
-            padding: 80px 20px;
-            background-color: #fff;
+        /* Section Styles */
+        section {
+            padding: 4rem 0;
         }
 
-        .category-section h2 {
+        section h2 {
             text-align: center;
-            font-size: 36px;
-            margin-bottom: 60px;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
             color: #1a1a1a;
             position: relative;
-            padding-bottom: 20px;
+            padding-bottom: 1rem;
         }
 
-        .category-section h2::after {
+        section h2::after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -137,231 +167,250 @@
             transform: translateX(-50%);
             width: 60px;
             height: 3px;
-            background: linear-gradient(90deg, #d4af37 0%, #c9a227 100%);
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
         }
 
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Product Grid */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
         .product-card {
-            background: #fff;
-            border-radius: 15px;
+            background: white;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            cursor: pointer;
         }
 
         .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
         }
 
         .product-image {
             width: 100%;
-            height: 280px;
-            object-fit: cover;
-            background: linear-gradient(135deg, #f0f0f0 0%, #e8e8e8 100%);
+            height: 250px;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 60px;
+            font-size: 3rem;
+            color: #d4af37;
+            position: relative;
+            overflow: hidden;
         }
 
-        .product-info {
-            padding: 25px;
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+        }
+
+        .product-content {
+            padding: 1.5rem;
         }
 
         .product-category {
-            font-size: 12px;
             color: #d4af37;
+            font-size: 0.8rem;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 1px;
+            margin-bottom: 0.5rem;
         }
 
-        .product-info h3 {
-            font-size: 22px;
-            margin: 10px 0;
+        .product-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
             color: #1a1a1a;
         }
 
         .product-description {
-            font-size: 14px;
             color: #666;
-            margin: 15px 0;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
             line-height: 1.5;
         }
 
         .product-price {
-            font-size: 24px;
-            font-weight: bold;
+            font-size: 1.5rem;
             color: #d4af37;
-            margin: 15px 0;
-        }
-
-        .buy-btn {
-            width: 100%;
-            padding: 12px;
-            background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
-            color: #1a1a1a;
-            border: none;
-            border-radius: 8px;
-            font-size: 14px;
             font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            margin-bottom: 1rem;
         }
 
-        .buy-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
-        }
-
-        /* Material Section */
-        .materials-section {
-            padding: 80px 20px;
-            background: linear-gradient(135deg, #f8f7f5 0%, #ede8e0 100%);
-        }
-
-        .materials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
-
-        .material-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-        }
-
-        .material-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-        }
-
-        .material-image {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            background: linear-gradient(135deg, #e8e8e8 0%, #d8d8d8 100%);
+        .product-footer {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 80px;
+            gap: 1rem;
         }
 
-        .material-info {
-            padding: 25px;
+        .product-footer .btn {
+            flex: 1;
+            padding: 0.7rem 1rem;
+            font-size: 0.9rem;
+            text-align: center;
         }
 
-        .material-info h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
+        /* Categories Section */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border-left: 4px solid #d4af37;
+        }
+
+        .category-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .category-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
             color: #1a1a1a;
         }
 
-        .material-info p {
+        .category-card p {
             color: #666;
-            margin-bottom: 20px;
+            margin-bottom: 1.5rem;
             line-height: 1.6;
         }
 
-        /* Feature Section */
-        .features-section {
-            padding: 60px 20px;
-            background-color: #fff;
-        }
-
-        .features-grid {
+        /* Features Section */
+        .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
         }
 
-        .feature-item {
+        .feature {
             text-align: center;
-            padding: 30px;
-            border-radius: 10px;
-            background: #f8f7f5;
-            transition: all 0.3s ease;
-        }
-
-        .feature-item:hover {
-            background: #ede8e0;
-            transform: translateY(-5px);
+            padding: 1.5rem;
         }
 
         .feature-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
+            font-size: 2rem;
+            margin-bottom: 1rem;
         }
 
-        .feature-item h4 {
-            font-size: 18px;
-            margin-bottom: 10px;
+        .feature h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
             color: #1a1a1a;
         }
 
-        .feature-item p {
-            font-size: 14px;
+        .feature p {
             color: #666;
+            font-size: 0.95rem;
         }
 
         /* Footer */
         footer {
-            background: #1a1a1a;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
             color: white;
-            padding: 40px 20px;
+            padding: 2rem 0;
             text-align: center;
-            margin-top: 80px;
+            margin-top: 3rem;
         }
 
-        footer p {
-            margin-bottom: 10px;
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        footer .footer-links {
-            margin-top: 20px;
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
         }
 
-        footer a {
+        .footer-links a {
             color: #d4af37;
             text-decoration: none;
-            margin: 0 15px;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
 
-        footer a:hover {
-            color: #fff;
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            color: #999;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 36px;
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
             }
 
             nav ul {
-                gap: 15px;
-                font-size: 14px;
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .btn-secondary {
+                margin-left: 0;
+                margin-top: 1rem;
+                display: block;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
             }
 
             .product-grid {
                 grid-template-columns: 1fr;
             }
 
-            .category-section h2 {
-                font-size: 28px;
+            .footer-links {
+                flex-direction: column;
+                gap: 0.5rem;
             }
         }
     </style>
@@ -369,137 +418,181 @@
 <body>
     <!-- Header -->
     <header>
-        <nav>
-            <div class="logo">✨ LuxeJewels</div>
-            <ul>
-                <li><a href="#produkte">Produkte</a></li>
-                <li><a href="#materialien">Materialien</a></li>
-                <li><a href="#kontakt">Kontakt</a></li>
-            </ul>
-        </nav>
+        <div class="header-content">
+            <div class="logo">Luxe<span>Jewels</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#schmuck">Schmuck</a></li>
+                    <li><a href="#kategorien">Kategorien</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <h1>Eleganz trifft <span class="highlight">Luxus</span></h1>
-            <p>Entdecke unsere exklusive Kollektion aus edlem Silber- und Goldschmuck</p>
-            <button class="hero-btn">Jetzt Einkaufen</button>
+        <div class="hero-content">
+            <h1>Eleganz & Raffinesse</h1>
+            <p>Entdecke unsere exklusive Kollektion aus hochwertigem Silber- und Goldschmuck</p>
+            <button class="btn">Jetzt Entdecken</button>
+            <button class="btn btn-secondary">Mehr Erfahren</button>
         </div>
     </section>
 
-    <!-- Produkte Section -->
-    <section class="category-section" id="produkte">
+    <!-- Kategorien Section -->
+    <section id="kategorien">
         <div class="container">
-            <h2>Unsere Kollektion</h2>
-            <div class="product-grid">
-                <!-- Silberketten -->
-                <div class="product-card">
-                    <div class="product-image">🔗</div>
-                    <div class="product-info">
-                        <span class="product-category">Silberschmuck</span>
-                        <h3>Elegante Silberkette</h3>
-                        <p class="product-description">Zeitlose Silberkette aus 925er Sterling-Silber mit feinster Verarbeitung</p>
-                        <div class="product-price">89,99€</div>
-                        <button class="buy-btn">In den Warenkorb</button>
-                    </div>
+            <h2>Unsere Kategorien</h2>
+            <p class="section-subtitle">Wähle aus unserer vielfältigen Auswahl an edlem Schmuck</p>
+            
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">⛓️</div>
+                    <h3>Ketten</h3>
+                    <p>Zarte und kräftige Ketten aus Silber und Gold. Jede Kette ist ein Meisterwerk der Handwerkskunst.</p>
+                    <button class="btn">Entdecken</button>
                 </div>
 
-                <!-- Goldketten -->
-                <div class="product-card">
-                    <div class="product-image">⛓️</div>
-                    <div class="product-info">
-                        <span class="product-category">Goldschmuck</span>
-                        <h3>Klassische Goldkette</h3>
-                        <p class="product-description">Luxuriöse Goldkette in 18K vergoldet mit klassischem Design</p>
-                        <div class="product-price">159,99€</div>
-                        <button class="buy-btn">In den Warenkorb</button>
-                    </div>
+                <div class="category-card">
+                    <div class="category-icon">✨</div>
+                    <h3>Armbänder</h3>
+                    <p>Stilvolle Armbänder mit modernem Design. Perfekt für jeden Anlass und Outfit.</p>
+                    <button class="btn">Entdecken</button>
                 </div>
 
-                <!-- Silberarmbänder -->
-                <div class="product-card">
-                    <div class="product-image">💫</div>
-                    <div class="product-info">
-                        <span class="product-category">Silberschmuck</span>
-                        <h3>Silberarmband</h3>
-                        <p class="product-description">Modernes Silberarmband mit eleganter Oberflächen-Struktur</p>
-                        <div class="product-price">79,99€</div>
-                        <button class="buy-btn">In den Warenkorb</button>
-                    </div>
+                <div class="category-card">
+                    <div class="category-icon">💎</div>
+                    <h3>Halsketten</h3>
+                    <p>Elegante Halsketten, die deinen Look vollenden. Mit hochwertigen Verschlüssen und exquisitem Design.</p>
+                    <button class="btn">Entdecken</button>
                 </div>
 
-                <!-- Goldarmbänder -->
-                <div class="product-card">
-                    <div class="product-image">✨</div>
-                    <div class="product-info">
-                        <span class="product-category">Goldschmuck</span>
-                        <h3>Goldarmband Deluxe</h3>
-                        <p class="product-description">Exklusives Goldarmband mit Diamanten-Besatz</p>
-                        <div class="product-price">249,99€</div>
-                        <button class="buy-btn">In den Warenkorb</button>
-                    </div>
+                <div class="category-card">
+                    <div class="category-icon">👑</div>
+                    <h3>Gold Schmuck</h3>
+                    <p>Zeitlose Goldstücke für Momente, die zählen. Luxus in vollendeter Form.</p>
+                    <button class="btn">Entdecken</button>
                 </div>
 
-                <!-- Silberhalskette -->
-                <div class="product-card">
-                    <div class="product-image">👑</div>
-                    <div class="product-info">
-                        <span class="product-category">Silberschmuck</span>
-                        <h3>Halskette mit Anhänger</h3>
-                        <p class="product-description">Wunderschöne Silberhalskette mit funkelndem Anhänger</p>
-                        <div class="product-price">119,99€</div>
-                        <button class="buy-btn">In den Warenkorb</button>
-                    </div>
+                <div class="category-card">
+                    <div class="category-icon">🤍</div>
+                    <h3>Silber Schmuck</h3>
+                    <p>Strahlender Silberschmuck mit modernem Flair. Vielseitig und zeitlos elegant.</p>
+                    <button class="btn">Entdecken</button>
                 </div>
 
-                <!-- Goldhalskette -->
-                <div class="product-card">
-                    <div class="product-image">💎</div>
-                    <div class="product-info">
-                        <span class="product-category">Goldschmuck</span>
-                        <h3>Premium Halskette</h3>
-                        <p class="product-description">Edle Goldhalskette mit Kristall-Anhänger in Premiumqualität</p>
-                        <div class="product-price">329,99€</div>
-                        <button class="buy-btn">In den Warenkorb</button>
-                    </div>
+                <div class="category-card">
+                    <div class="category-icon">💍</div>
+                    <h3>Spezial Edition</h3>
+                    <p>Limitierte Editionen und exklusive Designs. Nur für die anspruchsvollsten Käufer.</p>
+                    <button class="btn">Entdecken</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Materialien Section -->
-    <section class="materials-section" id="materialien">
+    <!-- Produkte Section -->
+    <section id="schmuck">
         <div class="container">
-            <h2>Unsere Premium-Materialien</h2>
-            <div class="materials-grid">
-                <!-- Silber -->
-                <div class="material-card">
-                    <div class="material-image">🌟</div>
-                    <div class="material-info">
-                        <h3>925er Sterling-Silber</h3>
-                        <p>Unser Silberschmuck wird aus echtem 925er Sterling-Silber gefertigt. Dies ist die höchste Qualität für Silberschmuck und garantiert Langlebigkeit und Glanz für viele Jahre.</p>
-                        <button class="buy-btn">Silberschmuck entdecken</button>
+            <h2>Unsere Premium Kollektion</h2>
+            <p class="section-subtitle">Handverlesene Schmuckstücke für jeden Geschmack</p>
+
+            <div class="product-grid">
+                <!-- Gold Kette -->
+                <div class="product-card">
+                    <div class="product-image">👑</div>
+                    <div class="product-content">
+                        <div class="product-category">Gold • Kette</div>
+                        <div class="product-title">Elegante Goldkette</div>
+                        <div class="product-description">
+                            Eine zeitlose Goldkette mit feiner Verarbeitung. Perfekt für jeden Tag und besondere Anlässe.
+                        </div>
+                        <div class="product-price">€ 129,99</div>
+                        <div class="product-footer">
+                            <button class="btn">Kaufen</button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Gold -->
-                <div class="material-card">
-                    <div class="material-image">🏆</div>
-                    <div class="material-info">
-                        <h3>18K Echtgold & Vergoldung</h3>
-                        <p>Unsere Goldkollektion besteht aus 18K Echtgold und hochwertiger Vergoldung. Jedes Stück wird mit größter Sorgfalt verarbeitet und garantiert ein Leben lang Schönheit.</p>
-                        <button class="buy-btn">Goldschmuck entdecken</button>
+                <!-- Silber Armband -->
+                <div class="product-card">
+                    <div class="product-image">✨</div>
+                    <div class="product-content">
+                        <div class="product-category">Silber • Armband</div>
+                        <div class="product-title">Modernes Silber Armband</div>
+                        <div class="product-description">
+                            Schlichtes und elegantes Silberarmband mit modernem Design. Passt zu jedem Style.
+                        </div>
+                        <div class="product-price">€ 84,99</div>
+                        <div class="product-footer">
+                            <button class="btn">Kaufen</button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Edelsteine -->
-                <div class="material-card">
-                    <div class="material-image">💍</div>
-                    <div class="material-info">
-                        <h3>Kristalle & Edelsteine</h3>
-                        <p>Wir verwenden nur die feinsten Kristalle und Edelsteine für unseren exklusiven Schmuck. Jeder Stein wird sorgfältig ausgewählt und fachmännisch verarbeitet.</p>
-                        <button class="buy-btn">Schmuck mit Steinen</button>
+                <!-- Gold Halskette -->
+                <div class="product-card">
+                    <div class="product-image">💎</div>
+                    <div class="product-content">
+                        <div class="product-category">Gold • Halskette</div>
+                        <div class="product-title">Luxus Goldhalskette</div>
+                        <div class="product-description">
+                            Exquisite Halskette aus hochwertigem Gold mit Glanzfinish. Ein absolutes Statement-Piece.
+                        </div>
+                        <div class="product-price">€ 199,99</div>
+                        <div class="product-footer">
+                            <button class="btn">Kaufen</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Silber Kette -->
+                <div class="product-card">
+                    <div class="product-image">🤍</div>
+                    <div class="product-content">
+                        <div class="product-category">Silber • Kette</div>
+                        <div class="product-title">Klassische Silberkette</div>
+                        <div class="product-description">
+                            Eine klassische Silberkette mit feinem Glanz. Universell einsetzbar und zeitlos elegant.
+                        </div>
+                        <div class="product-price">€ 74,99</div>
+                        <div class="product-footer">
+                            <button class="btn">Kaufen</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gold Armband -->
+                <div class="product-card">
+                    <div class="product-image">✨</div>
+                    <div class="product-content">
+                        <div class="product-category">Gold • Armband</div>
+                        <div class="product-title">Premium Gold Armband</div>
+                        <div class="product-description">
+                            Edles Goldarmband mit handwerklicher Perfektion. Ein Schmuckstück mit Geschichte.
+                        </div>
+                        <div class="product-price">€ 149,99</div>
+                        <div class="product-footer">
+                            <button class="btn">Kaufen</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Silber Halskette -->
+                <div class="product-card">
+                    <div class="product-image">💍</div>
+                    <div class="product-content">
+                        <div class="product-category">Silber • Halskette</div>
+                        <div class="product-title">Elegante Silber Halskette</div>
+                        <div class="product-description">
+                            Filigrane Silberhalskette mit modernem Twist. Minimalistisch schön und elegant.
+                        </div>
+                        <div class="product-price">€ 99,99</div>
+                        <div class="product-footer">
+                            <button class="btn">Kaufen</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -507,39 +600,46 @@
     </section>
 
     <!-- Features Section -->
-    <section class="features-section">
+    <section id="features">
         <div class="container">
             <h2>Warum LuxeJewels?</h2>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">✓</div>
-                    <h4>Premium Qualität</h4>
-                    <p>Nur hochwertige Materialien und meisterhafte Verarbeitung</p>
+            <p class="section-subtitle">Qualität, Handwerk und Service auf höchstem Niveau</p>
+
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Höchste Qualität</h3>
+                    <p>Nur edelste Materialien und handwerkliche Perfektion in jedem Schmuckstück.</p>
                 </div>
-                <div class="feature-item">
+
+                <div class="feature">
                     <div class="feature-icon">🚚</div>
-                    <h4>Versand</h4>
-                    <p>Kostenloser Versand ab 100€ Bestellwert</p>
+                    <h3>Schnelle Lieferung</h3>
+                    <p>Deine Bestellung kommt sicher und schnell zu dir nach Hause.</p>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🔒</div>
-                    <h4>Sicherheit</h4>
-                    <p>100% sichere Zahlungsabwicklung und Kundenschutz</p>
+
+                <div class="feature">
+                    <div class="feature-icon">💯</div>
+                    <h3>Authentizität</h3>
+                    <p>Alle Produkte sind zertifiziert und 100% authentisch.</p>
                 </div>
-                <div class="feature-item">
+
+                <div class="feature">
+                    <div class="feature-icon">❤️</div>
+                    <h3>Kundenzufriedenheit</h3>
+                    <p>Deine Zufriedenheit ist unsere Priorität. Kostenloser Service & Support.</p>
+                </div>
+
+                <div class="feature">
                     <div class="feature-icon">♻️</div>
-                    <h4>Nachhaltig</h4>
-                    <p>Umweltfreundliche und ethisch verantwortungsvolle Produktion</p>
+                    <h3>Nachhaltigkeitmn</h3>
+                    <p>Umweltbewusste Produktion und verantwortungsvolle Rohstoffbeschaffung.</p>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">💝</div>
-                    <h4>Geschenkbox</h4>
-                    <p>Jedes Stück kommt in einer eleganten Geschenkverpackung</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🛡️</div>
-                    <h4>Garantie</h4>
-                    <p>2 Jahre Zufriedenheitsgarantie auf alle Produkte</p>
+
+                <div class="feature">
+                    <div class="feature-icon">🎁</div>
+                    <h3>Geschenkverpackung</h3>
+                    <p>Jedes Schmuckstück kommt in einer eleganten Geschenkbox.</p>
                 </div>
             </div>
         </div>
@@ -547,17 +647,49 @@
 
     <!-- Footer -->
     <footer id="kontakt">
-        <div class="container">
-            <h3>LuxeJewels - Dein Partner für edlen Schmuck</h3>
-            <p>Kontakt: info@luxejewels.de | Tel: +49 (0) 123 456789</p>
-            <p>© 2024 LuxeJewels. Alle Rechte vorbehalten.</p>
+        <div class="footer-content">
+            <div class="logo" style="color: #d4af37; margin-bottom: 1rem;">Luxe<span style="color: #d4af37;">Jewels</span></div>
+            
             <div class="footer-links">
-                <a href="#impressum">Impressum</a>
-                <a href="#datenschutz">Datenschutz</a>
-                <a href="#agb">AGB</a>
-                <a href="#kontakt">Kontakt</a>
+                <a href="#">Über uns</a>
+                <a href="#">Datenschutz</a>
+                <a href="#">Impressum</a>
+                <a href="#">AGB</a>
+                <a href="#">Kontakt</a>
+            </div>
+
+            <div style="margin: 1.5rem 0; color: #999;">
+                <p>📧 info@luxejewels.de</p>
+                <p>📱 +49 (123) 456-789</p>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 LuxeJewels. Alle Rechte vorbehalten. | Handwerkliche Meisterschaft seit 2020</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Smooth Scrolling für Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Button Interaktion
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function() {
+                alert('Vielen Dank für dein Interesse! Diese Funktion wird in Kürze aktiviert.');
+            });
+        });
+    </script>
 </body>
 </html>
