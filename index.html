@@ -3,44 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aurelia Jewelry Shop</title>
+<title>Aurelia Jewelry</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-    body{
+    *{
         margin:0;
-        font-family:Arial, sans-serif;
+        padding:0;
+        box-sizing:border-box;
+    }
+
+    body{
+        font-family:'Montserrat', sans-serif;
         background:#0f0f0f;
         color:#fff;
     }
 
     header{
+        background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1600&q=80');
+        background-size:cover;
+        background-position:center;
+        height:90vh;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
         text-align:center;
-        padding:90px 20px;
-        background:linear-gradient(135deg,#d4af37,#111);
+        padding:20px;
     }
 
     header h1{
-        font-size:55px;
-        margin-bottom:10px;
+        font-family:'Playfair Display', serif;
+        font-size:60px;
+        color:#d4af37;
     }
 
     header p{
         max-width:700px;
-        margin:auto;
+        margin-top:20px;
         font-size:18px;
-        color:#eee;
+        color:#ddd;
         line-height:1.6;
     }
 
     section{
-        padding:60px 10%;
+        padding:70px 10%;
     }
 
     h2{
         text-align:center;
         color:#d4af37;
-        font-size:34px;
+        font-size:36px;
         margin-bottom:40px;
+        font-family:'Playfair Display', serif;
     }
 
     .grid{
@@ -54,11 +71,11 @@
         border-radius:15px;
         overflow:hidden;
         transition:0.3s;
-        box-shadow:0 0 20px rgba(0,0,0,0.4);
+        box-shadow:0 0 15px rgba(0,0,0,0.4);
     }
 
     .card:hover{
-        transform:translateY(-8px);
+        transform:translateY(-10px);
     }
 
     .card img{
@@ -69,13 +86,14 @@
 
     .card h3{
         margin:15px;
+        font-size:20px;
     }
 
     .card p{
         margin:0 15px;
         color:#aaa;
         font-size:14px;
-        line-height:1.4;
+        line-height:1.5;
     }
 
     .price{
@@ -107,6 +125,7 @@
         padding:30px;
         background:#000;
         color:#777;
+        font-size:14px;
     }
 </style>
 </head>
@@ -116,13 +135,12 @@
 <header>
     <h1>Aurelia Jewelry</h1>
     <p>
-        Entdecke exklusiven Gold- und Silberschmuck in zeitlosen Designs.
-        Unsere Kollektion vereint Eleganz, Qualität und modernen Stil –
-        perfekt für jeden Anlass oder als besonderes Geschenk.
+        Entdecke exklusive Gold- und Silberschmuckstücke – von eleganten Halsketten
+        über stilvolle Armbänder bis hin zu zeitlosen Ohrringen. Perfekt für jeden Anlass.
     </p>
 </header>
 
-<!-- HÄNGEKETTEN -->
+<!-- HALSKETTEN -->
 <section>
 <h2>Halsketten</h2>
 
@@ -131,7 +149,7 @@
     <div class="card">
         <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=80">
         <h3>Gold Halskette Classic</h3>
-        <p>Elegante 18K Goldkette für einen luxuriösen Look.</p>
+        <p>Zeitlose Eleganz aus hochwertigem 18K Gold.</p>
         <div class="price">€129</div>
         <a href="#" class="buy">Jetzt kaufen</a>
     </div>
@@ -139,16 +157,8 @@
     <div class="card">
         <img src="https://images.unsplash.com/photo-1611599537845-1c7aca0091c0?auto=format&fit=crop&w=800&q=80">
         <h3>Silber Halskette Minimal</h3>
-        <p>Feine Silberkette für einen modernen, schlichten Stil.</p>
+        <p>Schlichtes Design für einen modernen Look.</p>
         <div class="price">€89</div>
-        <a href="#" class="buy">Jetzt kaufen</a>
-    </div>
-
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1627293509201-3c7b7a2a2a50?auto=format&fit=crop&w=800&q=80">
-        <h3>Gold Anhänger Herz</h3>
-        <p>Romantischer Herzanhänger in glänzendem Gold.</p>
-        <div class="price">€149</div>
         <a href="#" class="buy">Jetzt kaufen</a>
     </div>
 
@@ -163,8 +173,8 @@
 
     <div class="card">
         <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=800&q=80">
-        <h3>Gold Armband Premium</h3>
-        <p>Luxuriöses Design für besondere Anlässe.</p>
+        <h3>Gold Armband Luxus</h3>
+        <p>Edles Armband für besondere Momente.</p>
         <div class="price">€119</div>
         <a href="#" class="buy">Jetzt kaufen</a>
     </div>
@@ -172,16 +182,8 @@
     <div class="card">
         <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=800&q=80">
         <h3>Silber Armband Elegant</h3>
-        <p>Zeitloses Armband für jeden Tag.</p>
+        <p>Minimalistisch und perfekt für den Alltag.</p>
         <div class="price">€79</div>
-        <a href="#" class="buy">Jetzt kaufen</a>
-    </div>
-
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a2fdb?auto=format&fit=crop&w=800&q=80">
-        <h3>Gold Kettenarmband</h3>
-        <p>Starkes, elegantes Kettendesign in Gold.</p>
-        <div class="price">€139</div>
         <a href="#" class="buy">Jetzt kaufen</a>
     </div>
 
@@ -196,8 +198,8 @@
 
     <div class="card">
         <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a2fdb?auto=format&fit=crop&w=800&q=80">
-        <h3>Gold Ohrstecker</h3>
-        <p>Feine goldene Ohrstecker für elegante Looks.</p>
+        <h3>Gold Ohrringe Elegance</h3>
+        <p>Feine Ohrstecker aus glänzendem Gold.</p>
         <div class="price">€69</div>
         <a href="#" class="buy">Jetzt kaufen</a>
     </div>
@@ -205,16 +207,8 @@
     <div class="card">
         <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=80">
         <h3>Silber Ohrringe Modern</h3>
-        <p>Minimalistische Silberohrringe mit Stil.</p>
+        <p>Stilvolle Ohrringe mit klarem Design.</p>
         <div class="price">€59</div>
-        <a href="#" class="buy">Jetzt kaufen</a>
-    </div>
-
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a2fdb?auto=format&fit=crop&w=800&q=80">
-        <h3>Gold Creolen Luxus</h3>
-        <p>Klassische Creolen für einen edlen Auftritt.</p>
-        <div class="price">€99</div>
         <a href="#" class="buy">Jetzt kaufen</a>
     </div>
 
