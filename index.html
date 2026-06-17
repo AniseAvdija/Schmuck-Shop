@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eleganz Schmuck</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background:#faf8f5;
+            color:#333;
+        }
+
+        header{
+            background:linear-gradient(135deg,#c8a96a,#f5e6c5);
+            color:white;
+            text-align:center;
+            padding:80px 20px;
+        }
+
+        header h1{
+            font-size:55px;
+            margin-bottom:20px;
+        }
+
+        header p{
+            font-size:22px;
+            margin-bottom:30px;
+        }
+
+        .btn{
+            display:inline-block;
+            background:white;
+            color:#b8860b;
+            padding:15px 35px;
+            text-decoration:none;
+            font-weight:bold;
+            border-radius:30px;
+            transition:.3s;
+        }
+
+        .btn:hover{
+            background:#333;
+            color:white;
+        }
+
+        section{
+            padding:70px 10%;
+        }
+
+        h2{
+            text-align:center;
+            margin-bottom:40px;
+            color:#b8860b;
+            font-size:36px;
+        }
+
+        .products{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:30px;
+        }
+
+        .card{
+            background:white;
+            border-radius:15px;
+            overflow:hidden;
+            box-shadow:0 5px 15px rgba(0,0,0,.1);
+            transition:.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-10px);
+        }
+
+        .card img{
+            width:100%;
+            height:250px;
+            object-fit:cover;
+        }
+
+        .card h3{
+            padding:20px 20px 10px;
+        }
+
+        .card p{
+            padding:0 20px 20px;
+            color:#666;
+        }
+
+        .about{
+            text-align:center;
+            max-width:900px;
+            margin:auto;
+            font-size:18px;
+            line-height:1.8;
+        }
+
+        footer{
+            background:#222;
+            color:white;
+            text-align:center;
+            padding:25px;
+        }
+
+        @media(max-width:768px){
+            header h1{
+                font-size:40px;
+            }
+
+            header p{
+                font-size:18px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Eleganz Schmuck</h1>
+    <p>Entdecke zeitlose Schönheit für jeden Anlass.</p>
+
+    <a href="#produkte" class="btn">Jetzt entdecken</a>
+</header>
+
+<section id="produkte">
+
+    <h2>Unsere Kollektion</h2>
+
+    <div class="products">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=800&q=80" alt="Goldring">
+
+            <h3>Goldringe</h3>
+
+            <p>Elegante Ringe aus hochwertigem Gold für besondere Momente.</p>
+
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a2fdb?auto=format&fit=crop&w=800&q=80" alt="Halskette">
+
+            <h3>Halsketten</h3>
+
+            <p>Edle Halsketten mit stilvollen Designs für jeden Geschmack.</p>
+
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80" alt="Armband">
+
+            <h3>Armbänder</h3>
+
+            <p>Luxuriöse Armbänder, die Eleganz und Stil vereinen.</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section>
+
+    <h2>Warum wir?</h2>
+
+    <div class="about">
+
+        <p>
+            Unsere Schmuckstücke werden mit höchster Präzision gefertigt und
+            verbinden modernes Design mit traditioneller Handwerkskunst.
+            Ob Geschenk oder persönliches Highlight – bei uns findest du
+            Schmuck, der Erinnerungen schafft.
+        </p>
+
+    </div>
+
+</section>
+
+<section style="text-align:center;">
+
+    <h2>Jetzt deinen Lieblingsschmuck entdecken</h2>
+
+    <p style="margin-bottom:30px;font-size:18px;">
+        Exklusive Angebote und zeitlose Eleganz warten auf dich.
+    </p>
+
+    <a href="#" class="btn">Kollektion ansehen</a>
+
+</section>
+
+<footer>
+
+    © 2026 Eleganz Schmuck | Alle Rechte vorbehalten.
+
+</footer>
+
+</body>
+</html>
